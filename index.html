@@ -1,10 +1,25 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Admin</title>
-  </head>
-  <body>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site_title }}</title>
+</head>
+<body>
+  <h1>{{ heading }}</h1>
+  <p>{{ description }}</p>
+
+  <div id="products">
+    {% for product in products %}
+    <div>
+      <h2>{{ product.title }}</h2>
+      <img src="{{ product.image }}" alt="{{ product.title }}">
+      <p>{{ product.description }}</p>
+      <p>Harga: {{ product.price }}</p>
+    </div>
+    {% endfor %}
+  </div>
+
+  <a href="/admin">Login Admin</a>
+</body>
 </html>
